@@ -21,20 +21,17 @@ const OptimizeLayout: FC<LayoutProps> = ({ children, ...props }) => {
   return (
     <Layout {...props}>
       <Page>
-        {/* <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_TRACKING_ID}`}
-        onLoad={() => {
-          window.dataLayer = window.dataLayer || []
-          function gtag() {
-            dataLayer.push(arguments)
-          }
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-          gtag('js', new Date())
-          gtag('config', process.env.NEXT_PUBLIC_GOOGLE_TRACKING_ID)
-        }}
-      /> */}
+          gtag('config', 'G-0J1JT61M1G');
+        `}
+        </Script>
         <Script
-          src={`https://www.googleoptimize.com/optimize.js?id=${process.env.NEXT_PUBLIC_OPTIMIZE_CONTAINER_ID}`}
+          src={`https://www.googleoptimize.com/optimize.js?id=OPT-NWMTS95`}
         />
         <GaProvider value={ga}>{children}</GaProvider>
       </Page>
