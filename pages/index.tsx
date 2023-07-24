@@ -27,7 +27,7 @@ export default function Index() {
   return (
     <>
       <Text variant="h2" className="mb-6">
-        AB testing with Google Optimize
+        AB testing with Google Optimize abuuuuuuuuuuuuuuuuuuuuj
       </Text>
       <Text className="mb-4">
         Once you load this page, there&apos;s a new <Code>{COOKIE_NAME}</Code>{' '}
