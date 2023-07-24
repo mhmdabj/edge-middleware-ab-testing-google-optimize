@@ -21,7 +21,10 @@ const OptimizeLayout: FC<LayoutProps> = ({ children, ...props }) => {
   return (
     <Layout {...props}>
       <Page>
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script
+            src={`https://www.googleoptimize.com/optimize.js?id=OPT-NWMTS95`}
+        />
+        <Script async id="google-analytics" strategy="afterInteractive">
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
@@ -30,9 +33,6 @@ const OptimizeLayout: FC<LayoutProps> = ({ children, ...props }) => {
           gtag('config', 'G-0J1JT61M1G');
         `}
         </Script>
-        <Script
-          src={`https://www.googleoptimize.com/optimize.js?id=OPT-NWMTS95`}
-        />
         <GaProvider value={ga}>{children}</GaProvider>
       </Page>
     </Layout>
